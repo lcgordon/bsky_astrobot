@@ -9,7 +9,7 @@ hrefurl = "http://rss.arxiv.org/atom/astro-ph"
 # hrefurl = "/Users/lindseygordon/Downloads/astro-ph"
 feed = feedparser.parse(hrefurl)
 nentries = len(feed['entries'])
-
+print(nentries)
 if nentries == 0:
     print("the arXiv RSS feed is down")
     sys.stdout.flush()
@@ -18,7 +18,7 @@ else:
     postable = False
     while postable == False: 
         i = np.random.randint(0, nentries)
-        # print(f"i = {i}")
+        print(f"i = {i}")
         link = feed['entries'][i]['link']
         title = feed['entries'][i]['title']
         # trim long author list: 
