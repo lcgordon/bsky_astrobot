@@ -4,14 +4,13 @@ import numpy as np
 import sys
 import feedparser #https://feedparser.readthedocs.io/en/latest/common-atom-elements.html
 
-# print("MADE IT TO PYTHON")
 hrefurl = "http://rss.arxiv.org/atom/astro-ph"
 # hrefurl = "/Users/lindseygordon/Downloads/astro-ph"
 feed = feedparser.parse(hrefurl)
 nentries = len(feed['entries'])
-
+# print(nentries)
 if nentries == 0:
-    print("the arXiv RSS feed is down")
+    print("Arxiv RSS feed is down")
     sys.stdout.flush()
 else: 
     # pull random entry until you get a viable skeet
