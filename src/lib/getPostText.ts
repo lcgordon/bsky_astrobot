@@ -7,7 +7,7 @@ export default async function getPostText() {
   //https://stackoverflow.com/questions/14332721/node-js-spawn-child-process-and-get-terminal-output-live
   var child_process = require('child_process');
 
-  var child = child_process.spawnSync("python", ["arxivapi.py"], { encoding : 'utf8', stdio: 'pipe' });
+  var child = child_process.spawnSync("python", ["arxivapi.py"], { encoding : 'utf8', shell:true });//stdio: 'pipe'
   console.log("Process finished.");
   console.log(child.stdout);
   if(child.error) {
