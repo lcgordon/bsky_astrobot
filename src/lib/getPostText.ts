@@ -9,6 +9,7 @@ export default async function getPostText() {
 
   var child = child_process.spawnSync("python", ["arxivapi.py"], { encoding : 'utf8' });
   console.log("Process finished.");
+  console.log(child.stdout);
   if(child.error) {
       console.log("ERROR: ",child.error);
   }
